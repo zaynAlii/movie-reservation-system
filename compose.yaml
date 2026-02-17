@@ -1,0 +1,38 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: movie_reservation_system
+    volumes:
+      - .:/code
+      - /code/.venv
+    depends_on:
+      - postgres_db
+    # environment:
+      # - DataBase_Url=postgresql://zain:postpass@postgres_db:5432/postservice
+    ports:
+      - "8000:8000"
+
+  postgres_db:
+    image: postgres:16
+    restart: always
+    container_name: PostgresContt
+    environment:
+      - POSTGRES_USER=zain
+      - POSTGRES_PASSWORD=postpass
+      - POSTGRES_DB=postservice
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+
+
+
+volumes:
+  postgres_db:
+    driver: local
+
+networks:
+  default:
+    driver: bridge
