@@ -30,10 +30,10 @@ A modern, scalable movie theater reservation system built with FastAPI, SQLAlche
 - Seat types (Standard, Premium, VIP, Accessible)
 
 ### Booking System
-- Real-time seat availability
+
 - Booking status workflow:
   - `PENDING`: Just created, payment not started
-  - `PAYMENT_PENDING`: User in payment flow
+
   - `CONFIRMED`: Payment successful
   - `CANCELLED`: User cancelled or payment failed
   - `REFUNDED`: Money returned
@@ -44,14 +44,9 @@ A modern, scalable movie theater reservation system built with FastAPI, SQLAlche
 ### Showtime Management
 - Schedule showtimes for movies
 - Dynamic pricing configuration
-- Real-time seat inventory tracking
+
 - Available, held, and total seats management
 
-### Payment Integration
-- Payment status tracking
-- Provider transaction ID storage
-- Refund support
-- Payment metadata storage
 
 ### Reviews & Ratings
 - Movie reviews with ratings (1-10 scale)
@@ -109,27 +104,6 @@ bash
 
 2. **Create and activate virtual environment**
    
-```
-bash
-   # Using uv
-   uv venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   
-   # Or using virtualenv
-   python -m venv .venv
-   source .venv/bin/activate
-   
-```
-
-3. **Install dependencies**
-   
-```
-bash
-   uv sync
-   # Or
-   pip install -r requirements.txt
-   
-```
 
 4. **Configure environment variables**
    
